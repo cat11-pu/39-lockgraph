@@ -1,0 +1,15 @@
+{
+  "self_code": "E_SELF_WAIT",
+  "cost": {"t0": 5, "t1": 2, "t2": 4},
+  "locks": [
+    {"id": "l0", "holder": "t0"},
+    {"id": "l1", "holder": "t1"},
+    {"id": "l2", "holder": "t2"}
+  ],
+  "waits": [
+    {"who": "t0", "wants": "l1"},
+    {"who": "t1", "wants": "l2"},
+    {"who": "t2", "wants": "l0"},
+    {"who": "t3", "wants": "l1"}
+  ]
+}
