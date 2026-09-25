@@ -13,10 +13,10 @@ const graph = findCycles(spec.locks, spec.waits);
 const plan = recover(graph.cycles, spec.cost || {}, spec.locks, spec.waits);
 const out = render(spec);
 
-emit("等待环 =", JSON.stringify(graph.cycles));
+emit("等待环 =", graph.cycles);
 emit("被回滚的事务 =", plan.victim);
-emit("释放的锁 =", JSON.stringify(plan.released));
-emit("随后被授予的等待 =", JSON.stringify(plan.granted));
+emit("释放的锁 =", plan.released);
+emit("随后被授予的等待 =", plan.granted);
 emit("处理后剩余环数 =", plan.remaining);
 emit("重复处理是否稳定 =", plan.stable);
 emit("自等待的错误码 =", spec.self_code);
